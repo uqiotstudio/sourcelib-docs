@@ -1,5 +1,7 @@
 # CSSE3010 Git Guide
 
+Note this guide is for Linux, OSX and Windows. You will find Windows specific instructions, below.
+
 Use Git to manage your development. Benefit: Git is an distributed repository that you can use to keep track of your current code history and use for backup purposes. You can check in changes when you need to, not just when you are connected to the Internet. This means that your git history will be more like a “workbook” or diary of your progress.
 
 There are 2 repositories you will need for this course 
@@ -24,17 +26,17 @@ This document contains instructions on the following procedures:
 ---
 ## Task 1: Setting up your git account
 Access to your gitea account is via your UQ login, using single sign on (SSO).
-Browse CSSE3010/CSSE7301 gitea using the URL: [https://csse3010-gitea.uqcloud.net/](https://csse3010-gitea.uqcloud.net/). Once logged in, you will see one empty 'repo' repository under your student number.
+Browse CSSE3010 gitea using the URL: [https://csse3010-gitea.uqcloud.net/](https://csse3010-gitea.uqcloud.net/). Once logged in, you will see one empty 'repo' repository under your student number.
 
 | ![gitea initial](images/gitea_dash.jpg) |
 |:--:|
-| *Figure 1: Logging into CSSE3010/CSSE7301 Gitea for the first time* |
+| *Figure 1: Logging into CSSE3010 Gitea for the first time* |
 
 This is your repo, all the code you write will be pushed here, all testing from projects and stages will be done by pulling from this repo.
 
 ---
-## Task 2: Public Key Generation
-You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal and type the following commands:
+## Task 2: Public Key Generation via Command Line (Linux)
+You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal (in your VM, if used) and type the following commands:
 
 - Generate key pair: `ssh-keygen`  
 - Add the key to the ssh-agent `ssh-add ~/.ssh/id_rsa`  
@@ -51,9 +53,13 @@ Copy the contents of `cat ~/.ssh/id_rsa.pub` into the "Content" section.
 
 NOTE: For VirtualBox users, make sure “clipboard, bidirectional” is enabled, this will help you copy+paste things between your Host OS and VM.
 
+### Public Key Generation for Windows
+Install [putty](https://www.putty.org/)
+Follow the steps on this [guide](https://phoenixnap.com/kb/generate-ssh-key-windows-10#ftoc-heading-6)
+
 ---
 ## Task 3: Git Configuration
-You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your Virtual Machine) and execute the following commands:
+You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your VM, if used) and execute the following commands:
 
 ```
 git config --global user.name "<MY.NAME>"
@@ -70,7 +76,7 @@ user.name is the name that will come up under your commit logs, user.email will 
 ## Task 4: Cloning Sourcelib
 
 
-<!-- ** If you're bring your own Linux environment instead of the CSSE3010/CSSE7301 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
+<!-- ** If you're bring your own Linux environment instead of the CSSE3010 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
 
 Execute the following commands:  
 - Change into home directory: `cd ~`  
@@ -105,7 +111,7 @@ NOTE: If you are working from home, you MUST be connected to the UQ VPN to be ab
 
 NOTE: There WILL be updates to `sourcelib` throughout the semester, make sure you keep it up to date by `cd ~/csse3010/sourcelib` `git fetch` `git pull`, do this often.
 
-NOTE: there are two labels in your gitg window, a `master` branch and a `origin/master` branch. The `master` branch is on your local repository, and all branches prefixed with `origin/` are on the remote server (CSSE3010/CSSE7301 gitea).
+NOTE: there are two labels in your gitg window, a `master` branch and a `origin/master` branch. The `master` branch is on your local repository, and all branches prefixed with `origin/` are on the remote server (CSSE3010 gitea).
 
 NOTE: You will only commit files to the `repo` repository.
 
