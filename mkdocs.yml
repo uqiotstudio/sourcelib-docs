@@ -1,5 +1,4 @@
-site_name: CSSE3010Docs
-site_url: https://uqembeddedsys-projects.github.io/sourcelib-docs
+site_name: sourcelib-docs
 nav:
 - Home: 'index.md'
 - Git: 'git/git.md'
