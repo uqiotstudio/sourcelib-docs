@@ -7,8 +7,8 @@ Linux Installation - Install CSSE3010 source and tools directly on Ubuntu (Not u
 
 ## Ubuntu Automatic Script installation
 The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .bashrc startup script and add your user name to the “dialout” group.
-
-1. Clone the sourcelib repository into your csse3010 directory using `git clone`
+ 
+1. Clone the sourcelib repository into your csse3010 directory using `git clone https://github.com/uqembeddedsys/sourcelib.git`
 2. Go to the sourcelib/tools folder
 3. Run the script sourcelib_install.sh as root – i.e. `sudo ./sourcelib_install.sh`
 4. The script will download and install part of the toolchain
@@ -16,7 +16,7 @@ The automatic script will download and install the required packages, add the so
 6. Type `echo $SOURCELIB_ROOT` into your terminal. This command should return a path variable, i.e ~/csse3010/sourcelib
 
 
-## Installing the GNU Arm Embedded Toolchain and STLink programming software
+## Installing the GNU Arm Embedded Toolchain and STLink programming software (Attempt only if the automatic script has not worked)
 
 The GNU Arm Embedded Toolchain contains a compatible compiler for our MCU, while the utilities provided by STLink allows us to flash the Nucleo via the on-board STLinkV2 programmer.
 
