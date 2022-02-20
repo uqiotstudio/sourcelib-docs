@@ -1,0 +1,12 @@
+site_name: CSSE3010Docs
+nav:
+- Home: 'index.md'
+- Git: 'git/git.md'
+- Setup:
+    - 'Virtual Machine': 'setup/virtual_machine/virtual_machine.md'
+    - 'Native Linux Setup Installation': 'setup/linux/linux.md'
+theme: readthedocs
+markdown_extensions:
+    - toc:
+        baselevel: 3
+        separator: "_"
