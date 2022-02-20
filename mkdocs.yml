@@ -5,6 +5,9 @@ nav:
 - Setup:
     - 'Virtual Machine': 'setup/virtual_machine/virtual_machine.md'
     - 'Native Linux Setup Installation': 'setup/linux/linux.md'
+- Getting Started:
+    - 'Blinky': 'getting_started/blinky.md'
+
 theme: readthedocs
 markdown_extensions:
     - toc:
