@@ -55,7 +55,11 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#task_1_setting_up_your_git_account">Task 1: Setting up your git account</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_2_public_key_generation">Task 2: Public Key Generation</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task_2_public_key_generation_via_command_line_linux">Task 2: Public Key Generation via Command Line (Linux)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#public_key_generation_for_windows">Public Key Generation for Windows</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#task_3_git_configuration">Task 3: Git Configuration</a>
     </li>
@@ -120,6 +124,7 @@
             <div class="section">
               
                 <h3 id="csse3010_git_guide">CSSE3010 Git Guide</h3>
+<p>Note this guide is for Linux, OSX and Windows. You will find Windows specific instructions, below.</p>
 <p>Use Git to manage your development. Benefit: Git is an distributed repository that you can use to keep track of your current code history and use for backup purposes. You can check in changes when you need to, not just when you are connected to the Internet. This means that your git history will be more like a “workbook” or diary of your progress.</p>
 <p>There are 2 repositories you will need for this course </p>
 <ul>
@@ -142,7 +147,7 @@
 <hr />
 <h4 id="task_1_setting_up_your_git_account">Task 1: Setting up your git account</h4>
 <p>Access to your gitea account is via your UQ login, using single sign on (SSO).
-Browse CSSE3010/CSSE7301 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net/">https://csse3010-gitea.uqcloud.net/</a>. Once logged in, you will see one empty 'repo' repository under your student number.</p>
+Browse CSSE3010 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net/">https://csse3010-gitea.uqcloud.net/</a>. Once logged in, you will see one empty 'repo' repository under your student number.</p>
 <table>
 <thead>
 <tr>
@@ -151,14 +156,14 @@ Browse CSSE3010/CSSE7301 gitea using the URL: <a href="https://csse3010-gitea.uq
 </thead>
 <tbody>
 <tr>
-<td align="center"><em>Figure 1: Logging into CSSE3010/CSSE7301 Gitea for the first time</em></td>
+<td align="center"><em>Figure 1: Logging into CSSE3010 Gitea for the first time</em></td>
 </tr>
 </tbody>
 </table>
 <p>This is your repo, all the code you write will be pushed here, all testing from projects and stages will be done by pulling from this repo.</p>
 <hr />
-<h4 id="task_2_public_key_generation">Task 2: Public Key Generation</h4>
-<p>You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal and type the following commands:</p>
+<h4 id="task_2_public_key_generation_via_command_line_linux">Task 2: Public Key Generation via Command Line (Linux)</h4>
+<p>You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal (in your VM, if used) and type the following commands:</p>
 <ul>
 <li>Generate key pair: <code>ssh-keygen</code>  </li>
 <li>Add the key to the ssh-agent <code>ssh-add ~/.ssh/id_rsa</code>  </li>
@@ -170,9 +175,12 @@ Browse CSSE3010/CSSE7301 gitea using the URL: <a href="https://csse3010-gitea.uq
 <p>The url for the SSH settings should be <a href="https://csse3010-gitea.uqcloud.net/user/settings/keys">https://csse3010-gitea.uqcloud.net/user/settings/keys</a>
 Copy the contents of <code>cat ~/.ssh/id_rsa.pub</code> into the "Content" section.</p>
 <p>NOTE: For VirtualBox users, make sure “clipboard, bidirectional” is enabled, this will help you copy+paste things between your Host OS and VM.</p>
+<h5 id="public_key_generation_for_windows">Public Key Generation for Windows</h5>
+<p>Install <a href="https://www.putty.org/">putty</a>
+Follow the steps on this <a href="https://phoenixnap.com/kb/generate-ssh-key-windows-10#ftoc-heading-6">guide</a></p>
 <hr />
 <h4 id="task_3_git_configuration">Task 3: Git Configuration</h4>
-<p>You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your Virtual Machine) and execute the following commands:</p>
+<p>You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your VM, if used) and execute the following commands:</p>
 <pre><code>git config --global user.name &quot;&lt;MY.NAME&gt;&quot;
 git config --global user.email MY.EMAIL@student.uq.edu.au
 </code></pre>
@@ -182,7 +190,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 
 <hr />
 <h4 id="task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</h4>
-<!-- ** If you're bring your own Linux environment instead of the CSSE3010/CSSE7301 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
+<!-- ** If you're bring your own Linux environment instead of the CSSE3010 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
 
 <p>Execute the following commands:<br />
 - Change into home directory: <code>cd ~</code><br />
@@ -223,7 +231,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 <p>When using git, you can graphically see the current history by running gitg.</p>
 <p>NOTE: If you are working from home, you MUST be connected to the UQ VPN to be able to use git remotely, see the <a href="https://my.uq.edu.au/information-and-services/information-technology/working-remotely/vpn-virtual-private-network">UQ VPN Guide</a></p>
 <p>NOTE: There WILL be updates to <code>sourcelib</code> throughout the semester, make sure you keep it up to date by <code>cd ~/csse3010/sourcelib</code> <code>git fetch</code> <code>git pull</code>, do this often.</p>
-<p>NOTE: there are two labels in your gitg window, a <code>master</code> branch and a <code>origin/master</code> branch. The <code>master</code> branch is on your local repository, and all branches prefixed with <code>origin/</code> are on the remote server (CSSE3010/CSSE7301 gitea).</p>
+<p>NOTE: there are two labels in your gitg window, a <code>master</code> branch and a <code>origin/master</code> branch. The <code>master</code> branch is on your local repository, and all branches prefixed with <code>origin/</code> are on the remote server (CSSE3010 gitea).</p>
 <p>NOTE: You will only commit files to the <code>repo</code> repository.</p>
 <h4 id="task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</h4>
 <p>Under normal development, you can use git to stage files, and commit them to your repository. </p>
