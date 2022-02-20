@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Git - CSSE3010Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Git";
+    var mkdocs_page_input_path = "git\\git.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CSSE3010Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Git</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task_1_setting_up_your_git_account">Task 1: Setting up your git account</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task_2_public_key_generation">Task 2: Public Key Generation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task_3_git_configuration">Task 3: Git Configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task_5_cloning_repo">Task 5: Cloning Repo</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#summary_of_important_commands">Summary of Important Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other_tips">Other tips</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Setup</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../setup/virtual_machine/virtual_machine/">Virtual Machine</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../setup/linux/linux/">Native Linux Setup Installation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/blinky/">Blinky</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CSSE3010Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Git</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="csse3010_git_guide">CSSE3010 Git Guide</h3>
+<p>Use Git to manage your development. Benefit: Git is an distributed repository that you can use to keep track of your current code history and use for backup purposes. You can check in changes when you need to, not just when you are connected to the Internet. This means that your git history will be more like a “workbook” or diary of your progress.</p>
+<p>There are 2 repositories you will need for this course </p>
+<ul>
+<li>'sourcelib' - this contains all the necessary drivers needed to compile your code, as well as programming examples, Makefiles, compiling tools, flashing tools, and debugging tools. This repository is public, available to everyone, you will only be pulling from this repository. You can find the repository here <a href="https://github.com/uqembeddedsys/sourcelib">https://github.com/uqembeddedsys/sourcelib</a>, you will clone it further on in this guide.</li>
+<li>'repo' - This is where you will commit your code, any libraries you develop, stage code, and project code goes here.</li>
+</ul>
+<p>This document contains instructions on the following procedures:</p>
+<ul>
+<li>Setting up your git account</li>
+<li>Initialising the repository locally (Do this the first time only)</li>
+<li>Public Key Generation (For automatic authentication)</li>
+<li>Cloning your online repository</li>
+<li>Adding a .gitignore file (Do this once only)</li>
+<li>Committing changes (Each time an element of work is done)</li>
+<li>Synchronizing your local repository with the online repository (after each stage/project) </li>
+<li>Summary</li>
+<li>Using the Git Command Line Interface (CLI)</li>
+<li>Troubleshooting</li>
+</ul>
+<hr />
+<h4 id="task_1_setting_up_your_git_account">Task 1: Setting up your git account</h4>
+<p>Access to your gitea account is via your UQ login, using single sign on (SSO).
+Browse CSSE3010/CSSE7301 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net/">https://csse3010-gitea.uqcloud.net/</a>. Once logged in, you will see one empty 'repo' repository under your student number.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="gitea initial" src="../images/gitea_dash.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 1: Logging into CSSE3010/CSSE7301 Gitea for the first time</em></td>
+</tr>
+</tbody>
+</table>
+<p>This is your repo, all the code you write will be pushed here, all testing from projects and stages will be done by pulling from this repo.</p>
+<hr />
+<h4 id="task_2_public_key_generation">Task 2: Public Key Generation</h4>
+<p>You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal and type the following commands:</p>
+<ul>
+<li>Generate key pair: <code>ssh-keygen</code>  </li>
+<li>Add the key to the ssh-agent <code>ssh-add ~/.ssh/id_rsa</code>  </li>
+<li>Display public key generated above: <code>cat ~/.ssh/id_rsa.pub</code>  </li>
+</ul>
+<p>NOTE: press <code>&lt;enter&gt;</code> when asked for file location and pass-phrase. If you get asked if you want to overwrite the previous key, say 'yes'. </p>
+<p>You now need to link the public ssh key to your gitea account. Open gitea in your browser and navigate:</p>
+<p>Profile and Settings (Top Right Button) -&gt; Settings -&gt; SSH / GPG Keys -&gt; Manage SSH Keys -&gt; Add Key</p>
+<p>The url for the SSH settings should be <a href="https://csse3010-gitea.uqcloud.net/user/settings/keys">https://csse3010-gitea.uqcloud.net/user/settings/keys</a>
+Copy the contents of <code>cat ~/.ssh/id_rsa.pub</code> into the "Content" section.</p>
+<p>NOTE: For VirtualBox users, make sure “clipboard, bidirectional” is enabled, this will help you copy+paste things between your Host OS and VM.</p>
+<hr />
+<h4 id="task_3_git_configuration">Task 3: Git Configuration</h4>
+<p>You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your Virtual Machine) and execute the following commands:</p>
+<pre><code>git config --global user.name &quot;&lt;MY.NAME&gt;&quot;
+git config --global user.email MY.EMAIL@student.uq.edu.au
+</code></pre>
+<p>NOTE: <code>&lt;MY.NAME&gt;</code> eg. “joe student”.</p>
+<p>user.name is the name that will come up under your commit logs, user.email will link your git agent to your git-ea account.</p>
+<!-- **If you're using your own Linux machine (NOT THE CSSE3010 VIRTUAL MACHINE)}, you will also need to set up a local csse3010 directory under your home directory for later tasks. NOTE: The csse3010 folder must be set up under the home directory in order for important environment variables to work properly. Refer to the mylib guide for the full folder hierarchy.**  -->
+
+<hr />
+<h4 id="task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</h4>
+<!-- ** If you're bring your own Linux environment instead of the CSSE3010/CSSE7301 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
+
+<p>Execute the following commands:<br />
+- Change into home directory: <code>cd ~</code><br />
+- Create a folder called csse3010: <code>mkdir csse3010</code><br />
+- Change into your csse3010 directory: <code>cd ~/csse3010</code>  <br />
+- Clone the remote sourcelib repository into your csse3010 folder. This will automatically create a folder called sourcelib:<br />
+<code>git clone  https://github.com/uqembeddedsys/sourcelib.git</code>  </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Git URL for cloning sourcelib" src="../images/sourcelib.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 2: Git URL for cloning sourcelib</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="task_5_cloning_repo">Task 5: Cloning Repo</h4>
+<p>Navigate to 'repo' in gitea, select 'SSH', and copy the ssh url</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Git-ea URL for cloning repo" src="../images/repo.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 3: Git URL for cloning repo</em></td>
+</tr>
+</tbody>
+</table>
+<p><code>cd ~/csse3010</code><br />
+<code>git clone &lt;copied url&gt;</code> e.g. <code>git@csse3010-gitea.zones.eait.uq.edu.au:12345678/repo.git</code></p>
+<p>There should now be 2 folders in <code>~/csse3010</code>, <code>repo</code> and <code>sourcelib</code>.</p>
+<p>You have now completed your local repository setup. You can now use git to commit your files. Note that committing files only stores files locally. It DOES NOT synchronise your local Git repository with your online repository.</p>
+<p>When using git, you can graphically see the current history by running gitg.</p>
+<p>NOTE: If you are working from home, you MUST be connected to the UQ VPN to be able to use git remotely, see the <a href="https://my.uq.edu.au/information-and-services/information-technology/working-remotely/vpn-virtual-private-network">UQ VPN Guide</a></p>
+<p>NOTE: There WILL be updates to <code>sourcelib</code> throughout the semester, make sure you keep it up to date by <code>cd ~/csse3010/sourcelib</code> <code>git fetch</code> <code>git pull</code>, do this often.</p>
+<p>NOTE: there are two labels in your gitg window, a <code>master</code> branch and a <code>origin/master</code> branch. The <code>master</code> branch is on your local repository, and all branches prefixed with <code>origin/</code> are on the remote server (CSSE3010/CSSE7301 gitea).</p>
+<p>NOTE: You will only commit files to the <code>repo</code> repository.</p>
+<h4 id="task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</h4>
+<p>Under normal development, you can use git to stage files, and commit them to your repository. </p>
+<p>Make a commit now by updating the <code>README.md</code> file in your <code>repo</code>, if there is no README.md file, you can create one with <code>touch README.md</code>.</p>
+<p>Open the file with a text editor. e.g. <code>code README.md</code>, change the title to <code>&lt;Student#&gt; 3010 Repo</code>, e.g. <code>42345678 3010 Repo</code>, save the file and close it. Open a terminal in the <code>repo</code> folder.</p>
+<pre><code>git status
+git add README.md  
+git commit -m&quot;updated README&quot;  
+git push -u origin master  
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="gitg commit example" src="../images/git_commit.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 4: git commit example</em></td>
+</tr>
+</tbody>
+</table>
+<p>Doing a git commit will create a commit in your local repository. Doing a git push will push the commit to your remote repository on gitea. You can do several git commits before doing a git push, if you so wish.</p>
+<p>Figure 5 shows the revised history after this commit.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="gitg commit history" src="../images/gitg_after_commit.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 5: gitg commit history</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="summary_of_important_commands">Summary of Important Commands</h4>
+<ul>
+<li>check curret repo status <code>git status</code></li>
+<li>view history: <code>gitg</code></li>
+<li>commit files: <code>git add</code>, <code>git commit</code> </li>
+<li>To get the latest changes from the online repository: <code>git fetch</code>, <code>git pull</code></li>
+<li>To push all your local commits to the online repository: <code>git push</code> (or <code>git push -u origin master</code> if pushing for the first time to an empty remote repository)  </li>
+<li>If you are recovering from a HDD failure, use the commands in the original guide <code>git clone &lt;URL&gt;</code></li>
+</ul>
+<hr />
+<h4 id="other_tips">Other tips</h4>
+<p>Commit changes regularly.</p>
+<p>You will be required to put your changes into the online Gitea (AT LEAST) after each assessment, every session, including stage, project, etc.</p>
+<hr />
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p><strong> Error: "Could not resolve hostname <code>https://csse3010-gitea.uqcloud.net/</code>: No address associated with host" </strong>  </p>
+<p>This URL should have been copied directly from the gitea web interface. Typing this manually has the potential to cause typos to exist.<br />
+This problem may be caused by your VM not being connected to the Internet.<br />
+- Make sure your computer (the “host”) is connected to the Internet.<br />
+- Make sure you are connected to UQ VPN<br />
+- Reboot your VM.<br />
+- <code>ping 8.8.8.8</code> - make sure you are getting packets<br />
+- <code>ping github.com</code> - make sure DNS works (<a href="https://stackoverflow.com/questions/9393409/ssh-could-not-resolve-hostname-github-com-name-or-service-not-known-fatal-th">fix</a>)<br />
+- <code>ssh-add -l</code> check the ssh-key is listed in the ssh-agent, also check the fingerprint of the key matches the fingerprint in gitea<br />
+- If all else fails, prepend <code>GIT_SSH_COMMAND="ssh -vv"</code> before the git command, e.g. <code>GIT_SSH_COMMAND="ssh -vv" git clone -v git@csse3010-gitea.zones.eait.uq.edu.au:41234567/repo.git</code>, then paste the output in Ed.</p>
+<p><strong> Error: Unable to do a git pull </strong></p>
+<p>"Your local changes to the following files would be overwritten by merge: Please, commit your changes or stash them before you can merge. Aborting"</p>
+<p>Reset your git and completely overwrite your local changes - NOTE: ALL YOUR CHANGES WILL BE DELETED AND REPLACED BY THE ONLINE GIT FILES. Run the following commands:</p>
+<pre><code>git reset HEAD --hard 
+git pull
+</code></pre>
+<p>Alternatively </p>
+<pre><code>git stash
+git pull
+git stash pop
+&lt;fix any merge conflicts&gt;
+git commit
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../setup/virtual_machine/virtual_machine/" class="btn btn-neutral float-right" title="Virtual Machine">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../setup/virtual_machine/virtual_machine/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

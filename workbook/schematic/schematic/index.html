@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Hardware Schematics - CSSE3010Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Hardware Schematics";
+    var mkdocs_page_input_path = "workbook\\schematic\\schematic.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CSSE3010Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../git/git/">Git</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Setup</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/virtual_machine/virtual_machine/">Virtual Machine</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/linux/linux/">Native Linux Setup Installation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/blinky/">Blinky</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CSSE3010Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Hardware Schematics</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="hardware_schematics">Hardware Schematics</h3>
+<p>Hardware schematics are meant to show how you would physically implement the stage/project design. Each hardware schematic diagram sheet must be pasted into your workbook. Each hardware schematic diagram sheet must have a unique ID (HID) that consists of the stage number and a unique ID for the hardware schematic - e.g. H1-2 is hardware schematic 2 from stage 1. The HID must be used when referring to the corresponding hardware schematic in your other hardware schematic diagram sheets.</p>
+<p>The hardware schematic should clearly show the inputs and outputs to the embedded platform and the peripherals in use. Wires or signals are represented as a single lines. A <strong>BUS</strong> is a collection of wires that all starts at the same peripheral and then all terminates at the same peripheral. Where possible use a double line to represent a Bus.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="bus_schematic" src="../images/bus.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 1: Hardware Schematic Bus Example</em></td>
+</tr>
+</tbody>
+</table>
+<p>Each wire or bus must have the start and end terminals labeled, e.g. what pins are connected. You must draw peripherals with standard logic symbols and each peripheral must be labeled. The schematic must be legible and neatly drawn.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="ex_schematic" src="../images/schematic.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Figure 2: Hardware Schematic Example</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="logic_symbols">Logic Symbols</h4>
+<p>IEEE distinctive logic symbols (e.g. NOT, AND, OR, etc) must be used when drawing a block diagram. If there is no distinctive symbol used, then a rectangular symbol can be used.Refer to the IEEE Standard Symbols PDF on Blackboard.</p>
+<h4 id="segmentation">Segmentation</h4>
+<p>Each hardware schematic should take up a single page. If a large design takes up more than one page, you must segment your design into separate hardware schematic blocks with unique HIDs, then combine them together in an overview schematic diagram. The overview hardware schematic shows each hardware schematic as a block (with HID). There should not be wires crossing pages.\</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
