@@ -7,8 +7,8 @@ Linux Installation - Install CSSE3010 source and tools directly on Ubuntu (Not u
 
 ## Ubuntu Automatic Script installation
 The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .bashrc startup script and add your user name to the “dialout” group.
-
-1. Clone the sourcelib repository into your csse3010 directory using `git clone`
+ 
+1. Clone the sourcelib repository into your csse3010 directory using `git clone https://github.com/uqembeddedsys/sourcelib.git`
 2. Go to the sourcelib/tools folder
 3. Run the script sourcelib_install.sh as root – i.e. `sudo ./sourcelib_install.sh`
 4. The script will download and install part of the toolchain
