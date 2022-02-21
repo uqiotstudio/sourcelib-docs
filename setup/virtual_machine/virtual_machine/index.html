@@ -1,214 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/virtual_machine/virtual_machine/">
-        <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Virtual Machine - sourcelib-docs</title>
-        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/virtual_machine/virtual_machine/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Virtual Machine - sourcelib-docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Virtual Machine";
+    var mkdocs_page_input_path = "setup\\virtual_machine\\virtual_machine.md";
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/virtual_machine/virtual_machine/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../../..">sourcelib-docs</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="wy-body-for-nav" role="document">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../../.." class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../../git/git/" class="nav-link">Git</a>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Virtual Machine</a>
-</li>
-                                    
-<li>
-    <a href="../../linux/linux/" class="dropdown-item">Native Linux Setup Installation</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../getting_started/blinky/" class="dropdown-item">Blinky</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../../../git/git/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../linux/linux/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/virtual_machine/virtual_machine.md" class="nav-link">Edit on sourcelib-docs</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+  <div class="wy-grid-for-nav">
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#virtual-machine-setup-guide" class="nav-link">Virtual Machine Setup Guide</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#linux-virtual-machine-requirements" class="nav-link">Linux Virtual Machine Requirements</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#vmware-player-pro-installation-windows" class="nav-link">VMware Player Pro Installation: (Windows)</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#step-1" class="nav-link">Step 1</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-2" class="nav-link">Step 2</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-3" class="nav-link">Step 3</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-4" class="nav-link">Step 4</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-5" class="nav-link">Step 5</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-6" class="nav-link">Step 6</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-7" class="nav-link">Step 7</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-8" class="nav-link">Step 8</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-9" class="nav-link">Step 9</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-10" class="nav-link">Step 10</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-11" class="nav-link">Step 11</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-12" class="nav-link">Step 12</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-13" class="nav-link">Step 13</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-14" class="nav-link">Step 14</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#virtualbox-installation-osx-or-windows" class="nav-link">VirtualBox Installation: (OSX or Windows)</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#step-1_1" class="nav-link">Step 1</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-2_1" class="nav-link">Step 2</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-3_1" class="nav-link">Step 3</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-4_1" class="nav-link">Step 4</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> sourcelib-docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-<h1 id="virtual-machine-setup-guide">Virtual Machine Setup Guide</h1>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../git/git/">Git</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Setup</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Virtual Machine</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/linux/">Native Linux Setup Installation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/blinky/">Blinky</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">sourcelib-docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Setup &raquo;</li>
+        
+      
+    
+    <li>Virtual Machine</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/virtual_machine/virtual_machine.md"> Edit on sourcelib-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="virtual_machine_setup_guide">Virtual Machine Setup Guide</h3>
 <ul>
 <li>CSSE3010 Linux Virtual Machine (VM) Requirements</li>
 <li>Install CSSE3010 VM on VMware Player Pro (Windows)</li>
 <li>Install CSSE3010 VM on VirtualBox (OSX or Windows)  </li>
 </ul>
-<h1 id="linux-virtual-machine-requirements">Linux Virtual Machine Requirements</h1>
+<h3 id="linux_virtual_machine_requirements">Linux Virtual Machine Requirements</h3>
 <p>You will require at least 8GB of hard-disk space, to install the VM. The Following Virtual Machines are recommended or the following operating systems:</p>
 <ul>
 <li>Windows: VMWare Player (preferred) or Virtual Box (alternate)</li>
 <li>OSX: Virtual Box or VMWare Fusion</li>
 </ul>
-<h1 id="vmware-player-pro-installation-windows">VMware Player Pro Installation: (Windows)</h1>
+<h3 id="vmware_player_pro_installation_windows">VMware Player Pro Installation: (Windows)</h3>
 <ul>
 <li>
 <p>You will be provided with a folder or links containing the VMWare workshop player installer and VM disk image file (.VDMK). Copy both to your hard drive. </p>
@@ -220,7 +131,7 @@
 <p>Install VMWare workshop player on your laptop.</p>
 </li>
 </ul>
-<h2 id="step-1">Step 1</h2>
+<h4 id="step_1">Step 1</h4>
 <p>You will now need to install the CSSE3010VM.VDMK file as a hard drive.</p>
 <p>Click, create a new virtual machine</p>
 <table>
@@ -235,12 +146,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-2">Step 2</h2>
+<h4 id="step_2">Step 2</h4>
 <p>In new virtual machine wizard, select "I will install the operating system later.". </p>
 <p>\includegraphics[width=0.7\textwidth]{images/Picture2.png}
 | <img alt="s2" src="../images/Picture2.png" /> |
 |:--:|</p>
-<h2 id="step-3">Step 3</h2>
+<h4 id="step_3">Step 3</h4>
 <p>In "guest operating system", select Linux and set the "Version" to be Ubuntu click next.</p>
 <table>
 <thead>
@@ -254,7 +165,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-4">Step 4</h2>
+<h4 id="step_4">Step 4</h4>
 <p>Set the "Virtual machine name:" to be CSSE3010VM. </p>
 <table>
 <thead>
@@ -268,11 +179,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-5">Step 5</h2>
+<h4 id="step_5">Step 5</h4>
 <p>Set the "Maximum disk size" to be 20GB. Select the "Store virtual disk as a single file". </p>
 <p>| <img alt="s5" src="../images/Picture5.png" /> |
 |:--:|]</p>
-<h2 id="step-6">Step 6</h2>
+<h4 id="step_6">Step 6</h4>
 <p>Check your settings are correct and click finish.</p>
 <table>
 <thead>
@@ -286,7 +197,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-7">Step 7</h2>
+<h4 id="step_7">Step 7</h4>
 <p>Select "CSSE3010VM", under "Home", in the main portal and click "edit virtual machine settings". </p>
 <table>
 <thead>
@@ -300,7 +211,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-8">Step 8</h2>
+<h4 id="step_8">Step 8</h4>
 <p>Select the “Hard Disk (SCSI) 20GB”</p>
 <ul>
 <li>Click “Remove” (The 20GB Hard Drive MUST BE REMOVED before proceeding)</li>
@@ -318,7 +229,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-9">Step 9</h2>
+<h4 id="step_9">Step 9</h4>
 <p>Select "Hard disk", in "Hardware types". </p>
 <table>
 <thead>
@@ -332,7 +243,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-10">Step 10</h2>
+<h4 id="step_10">Step 10</h4>
 <p>Select “SCSI”. </p>
 <table>
 <thead>
@@ -346,7 +257,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-11">Step 11</h2>
+<h4 id="step_11">Step 11</h4>
 <p>Select "use an existing virtual disk" in "Select a disk". Click Next.</p>
 <table>
 <thead>
@@ -360,7 +271,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-12">Step 12</h2>
+<h4 id="step_12">Step 12</h4>
 <p>Click Browse and select your CSSE3010vm.vdmk file. Click Finish.</p>
 <table>
 <thead>
@@ -374,7 +285,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-13">Step 13</h2>
+<h4 id="step_13">Step 13</h4>
 <p>Now click "play virtual machine".</p>
 <table>
 <thead>
@@ -388,7 +299,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-14">Step 14</h2>
+<h4 id="step_14">Step 14</h4>
 <p>Your Virtual Machine should now boot.</p>
 <table>
 <thead>
@@ -402,7 +313,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="virtualbox-installation-osx-or-windows">VirtualBox Installation: (OSX or Windows)</h1>
+<h3 id="virtualbox_installation_osx_or_windows">VirtualBox Installation: (OSX or Windows)</h3>
 <ul>
 <li>You will be provided with a folder containing the VirtualBox installer and VM .VDMK file image. Copy both to your hard drive.</li>
 <li>Install VirtualBox on your laptop.
@@ -421,7 +332,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h2 id="step-1_1">Step 1</h2>
+<h4 id="step_15">Step 1</h4>
 <p>Click Next, input the name as ‘CSSE3010’ and select your OS as Linux, version Ubuntu and then click Next. SELECT OPERATING SYSTEM: LINUX and VERSION: UBUNTU-64bit</p>
 <table>
 <thead>
@@ -435,7 +346,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h2 id="step-2_1">Step 2</h2>
+<h4 id="step_16">Step 2</h4>
 <p>Now you have to set the amount of RAM to be allocated to the VM, 512MB is a good base. Hit Next.</p>
 <table>
 <thead>
@@ -449,7 +360,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h2 id="step-3_1">Step 3</h2>
+<h4 id="step_17">Step 3</h4>
 <p>We will select the start-up hard disk for the system to be the provided .vmdk file.  This file will set up your VM to have all of the libraries, programs and other necessary files already set up.  Click ‘Use existing hard disk’ then click the browse button as highlighted.  Then navigate to and Open the ubuntu_vm.vmdk  provided.</p>
 <table>
 <thead>
@@ -463,7 +374,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h2 id="step-4_1">Step 4</h2>
+<h4 id="step_18">Step 4</h4>
 <p>Your new machine should now appear in the VirtualBox main window, double click the icon to boot it up.  Click OK through the dialogs that open and if prompted, log in as ‘csse3010 with password ‘csse3010.  You should now see a desktop screen similar to this:</p>
 <table>
 <thead>
@@ -476,81 +387,59 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 <td></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+              
             </div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "../../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../linux/linux/" class="btn btn-neutral float-right" title="Native Linux Setup Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../git/git/" class="btn btn-neutral" title="Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../git/git/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../linux/linux/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
-    </body>
+</body>
 </html>
