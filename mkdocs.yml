@@ -1,4 +1,8 @@
 site_name: sourcelib-docs
+site_url: https://github.com/uqembeddedsys-projects/sourcelib-docs
+repo_url: https://github.com/uqembeddedsys-projects/sourcelib-docs
+repo_name:  sourcelib-docs
+
 nav:
 - Home: 'index.md'
 - Git: 'git/git.md'
@@ -9,7 +13,3 @@ nav:
     - 'Blinky': 'getting_started/blinky.md'
 
 theme: readthedocs
-markdown_extensions:
-    - toc:
-        baselevel: 3
-        separator: "_"
