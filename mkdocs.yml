@@ -13,3 +13,7 @@ nav:
     - 'Blinky': 'getting_started/blinky.md'
 
 theme: readthedocs
+markdown_extensions:
+    - toc:
+        baselevel: 3
+        separator: "_"
