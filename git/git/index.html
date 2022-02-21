@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/git/git/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Git - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -20,7 +20,7 @@
     // Current page data
     var mkdocs_page_name = "Git";
     var mkdocs_page_input_path = "git\\git.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/git/git/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -53,25 +53,25 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Git</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#task_1_setting_up_your_git_account">Task 1: Setting up your git account</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-1-setting-up-your-git-account">Task 1: Setting up your git account</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_2_public_key_generation_via_command_line_linux">Task 2: Public Key Generation via Command Line (Linux)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-2-public-key-generation-via-command-line-linux">Task 2: Public Key Generation via Command Line (Linux)</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#public_key_generation_for_windows">Public Key Generation for Windows</a>
+    <li class="toctree-l3"><a class="reference internal" href="#public-key-generation-for-windows">Public Key Generation for Windows</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_3_git_configuration">Task 3: Git Configuration</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-3-git-configuration">Task 3: Git Configuration</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-4-cloning-sourcelib">Task 4: Cloning Sourcelib</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_5_cloning_repo">Task 5: Cloning Repo</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-5-cloning-repo">Task 5: Cloning Repo</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task-6-staging-and-pushing-files">Task 6: Staging and Pushing Files</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#summary_of_important_commands">Summary of Important Commands</a>
+    <li class="toctree-l2"><a class="reference internal" href="#summary-of-important-commands">Summary of Important Commands</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#other_tips">Other tips</a>
+    <li class="toctree-l2"><a class="reference internal" href="#other-tips">Other tips</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
     </li>
@@ -114,6 +114,8 @@
     <li>Git</li>
     <li class="wy-breadcrumbs-aside">
       
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/git/git.md"> Edit on sourcelib-docs</a>
+      
     </li>
   </ul>
   
@@ -123,7 +125,7 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="csse3010_git_guide">CSSE3010 Git Guide</h3>
+                <h1 id="csse3010-git-guide">CSSE3010 Git Guide</h1>
 <p>Note this guide is for Linux, OSX and Windows. You will find Windows specific instructions, below.</p>
 <p>Use Git to manage your development. Benefit: Git is an distributed repository that you can use to keep track of your current code history and use for backup purposes. You can check in changes when you need to, not just when you are connected to the Internet. This means that your git history will be more like a “workbook” or diary of your progress.</p>
 <p>There are 2 repositories you will need for this course </p>
@@ -145,7 +147,7 @@
 <li>Troubleshooting</li>
 </ul>
 <hr />
-<h4 id="task_1_setting_up_your_git_account">Task 1: Setting up your git account</h4>
+<h2 id="task-1-setting-up-your-git-account">Task 1: Setting up your git account</h2>
 <p>Access to your gitea account is via your UQ login, using single sign on (SSO).
 Browse CSSE3010 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net/">https://csse3010-gitea.uqcloud.net/</a>. Once logged in, you will see one empty 'repo' repository under your student number.</p>
 <table>
@@ -162,7 +164,7 @@ Browse CSSE3010 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net
 </table>
 <p>This is your repo, all the code you write will be pushed here, all testing from projects and stages will be done by pulling from this repo.</p>
 <hr />
-<h4 id="task_2_public_key_generation_via_command_line_linux">Task 2: Public Key Generation via Command Line (Linux)</h4>
+<h2 id="task-2-public-key-generation-via-command-line-linux">Task 2: Public Key Generation via Command Line (Linux)</h2>
 <p>You will need to generate a public and private key pair. The public key will need to be uploaded to your Gitea account. This will allow your local git to be automatically authenticated to your online git account. Open a terminal (in your VM, if used) and type the following commands:</p>
 <ul>
 <li>Generate key pair: <code>ssh-keygen</code>  </li>
@@ -175,11 +177,11 @@ Browse CSSE3010 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net
 <p>The url for the SSH settings should be <a href="https://csse3010-gitea.uqcloud.net/user/settings/keys">https://csse3010-gitea.uqcloud.net/user/settings/keys</a>
 Copy the contents of <code>cat ~/.ssh/id_rsa.pub</code> into the "Content" section.</p>
 <p>NOTE: For VirtualBox users, make sure “clipboard, bidirectional” is enabled, this will help you copy+paste things between your Host OS and VM.</p>
-<h5 id="public_key_generation_for_windows">Public Key Generation for Windows</h5>
+<h3 id="public-key-generation-for-windows">Public Key Generation for Windows</h3>
 <p>Install <a href="https://www.putty.org/">putty</a>
 Follow the steps on this <a href="https://phoenixnap.com/kb/generate-ssh-key-windows-10#ftoc-heading-6">guide</a></p>
 <hr />
-<h4 id="task_3_git_configuration">Task 3: Git Configuration</h4>
+<h2 id="task-3-git-configuration">Task 3: Git Configuration</h2>
 <p>You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your VM, if used) and execute the following commands:</p>
 <pre><code>git config --global user.name &quot;&lt;MY.NAME&gt;&quot;
 git config --global user.email MY.EMAIL@student.uq.edu.au
@@ -189,7 +191,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 <!-- **If you're using your own Linux machine (NOT THE CSSE3010 VIRTUAL MACHINE)}, you will also need to set up a local csse3010 directory under your home directory for later tasks. NOTE: The csse3010 folder must be set up under the home directory in order for important environment variables to work properly. Refer to the mylib guide for the full folder hierarchy.**  -->
 
 <hr />
-<h4 id="task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</h4>
+<h2 id="task-4-cloning-sourcelib">Task 4: Cloning Sourcelib</h2>
 <!-- ** If you're bring your own Linux environment instead of the CSSE3010 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
 
 <p>Execute the following commands:<br />
@@ -210,7 +212,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 </tr>
 </tbody>
 </table>
-<h4 id="task_5_cloning_repo">Task 5: Cloning Repo</h4>
+<h2 id="task-5-cloning-repo">Task 5: Cloning Repo</h2>
 <p>Navigate to 'repo' in gitea, select 'SSH', and copy the ssh url</p>
 <table>
 <thead>
@@ -233,7 +235,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 <p>NOTE: There WILL be updates to <code>sourcelib</code> throughout the semester, make sure you keep it up to date by <code>cd ~/csse3010/sourcelib</code> <code>git fetch</code> <code>git pull</code>, do this often.</p>
 <p>NOTE: there are two labels in your gitg window, a <code>master</code> branch and a <code>origin/master</code> branch. The <code>master</code> branch is on your local repository, and all branches prefixed with <code>origin/</code> are on the remote server (CSSE3010 gitea).</p>
 <p>NOTE: You will only commit files to the <code>repo</code> repository.</p>
-<h4 id="task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</h4>
+<h2 id="task-6-staging-and-pushing-files">Task 6: Staging and Pushing Files</h2>
 <p>Under normal development, you can use git to stage files, and commit them to your repository. </p>
 <p>Make a commit now by updating the <code>README.md</code> file in your <code>repo</code>, if there is no README.md file, you can create one with <code>touch README.md</code>.</p>
 <p>Open the file with a text editor. e.g. <code>code README.md</code>, change the title to <code>&lt;Student#&gt; 3010 Repo</code>, e.g. <code>42345678 3010 Repo</code>, save the file and close it. Open a terminal in the <code>repo</code> folder.</p>
@@ -269,7 +271,7 @@ git push -u origin master
 </tbody>
 </table>
 <hr />
-<h4 id="summary_of_important_commands">Summary of Important Commands</h4>
+<h2 id="summary-of-important-commands">Summary of Important Commands</h2>
 <ul>
 <li>check curret repo status <code>git status</code></li>
 <li>view history: <code>gitg</code></li>
@@ -279,11 +281,11 @@ git push -u origin master
 <li>If you are recovering from a HDD failure, use the commands in the original guide <code>git clone &lt;URL&gt;</code></li>
 </ul>
 <hr />
-<h4 id="other_tips">Other tips</h4>
+<h2 id="other-tips">Other tips</h2>
 <p>Commit changes regularly.</p>
 <p>You will be required to put your changes into the online Gitea (AT LEAST) after each assessment, every session, including stage, project, etc.</p>
 <hr />
-<h4 id="troubleshooting">Troubleshooting</h4>
+<h2 id="troubleshooting">Troubleshooting</h2>
 <p><strong> Error: "Could not resolve hostname <code>https://csse3010-gitea.uqcloud.net/</code>: No address associated with host" </strong>  </p>
 <p>This URL should have been copied directly from the gitea web interface. Typing this manually has the potential to cause typos to exist.<br />
 This problem may be caused by your VM not being connected to the Internet.<br />

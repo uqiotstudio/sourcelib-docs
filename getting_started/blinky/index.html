@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/getting_started/blinky/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Blinky - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -20,7 +20,7 @@
     // Current page data
     var mkdocs_page_name = "Blinky";
     var mkdocs_page_input_path = "getting_started\\blinky.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/getting_started/blinky/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -65,17 +65,17 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Blinky</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#getting_started">Getting Started</a>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#updating_flashing_tools">Updating flashing tools</a>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-flashing-tools">Updating flashing tools</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#verifying_jlink">Verifying JLink</a>
+    <li class="toctree-l2"><a class="reference internal" href="#verifying-jlink">Verifying JLink</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#flashing_code">Flashing Code</a>
+    <li class="toctree-l2"><a class="reference internal" href="#flashing-code">Flashing Code</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#tips_and_troubleshooting">Tips and Troubleshooting</a>
+    <li class="toctree-l2"><a class="reference internal" href="#tips-and-troubleshooting">Tips and Troubleshooting</a>
     </li>
     </ul>
                     </li>
@@ -108,6 +108,8 @@
     <li>Blinky</li>
     <li class="wy-breadcrumbs-aside">
       
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/getting_started/blinky.md"> Edit on sourcelib-docs</a>
+      
     </li>
   </ul>
   
@@ -117,23 +119,23 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="compiling_your_first_app">Compiling your first app</h3>
-<h4 id="getting_started">Getting Started</h4>
+                <h1 id="compiling-your-first-app">Compiling your first app</h1>
+<h2 id="getting-started">Getting Started</h2>
 <p>Navigate to sourcelib -&gt; examples -&gt; getting-started -&gt; blink</p>
 <p>Select your platform here, for most people this will be nucleo-f429. If you are an external student, you may have one of the other boards, check it carefully.</p>
-<h4 id="compiling">Compiling</h4>
+<h2 id="compiling">Compiling</h2>
 <p>Inside the platform folder, there should be a file called <code>main.c</code> and a file called <code>Makefile</code>. Execute the command:
 <code>make</code></p>
 <p>All the c files should now start building, when it finishes, there will be a main.bin file, main.elf file, main.hex file, and main.o file, as well as an obj directory.</p>
-<h4 id="updating_flashing_tools">Updating flashing tools</h4>
+<h2 id="updating-flashing-tools">Updating flashing tools</h2>
 <p>The flashing tools used in this course rely on JLink libraries, JLink is used to communicate with the debugging chip on the board which will then flash the code (amongst doing other things).However the board dy default comes with a different debugging chip, ST-LINK, thus we will need to replace the ST-LINK firmware with JLink firmware. If you are an internal student, this may have already been done for you, and you can try skipping to the next section, external students should read on.</p>
 <ul>
 <li>Download and install the ST-LINK USB Drivers for Windows <a href="https://www.st.com/en/development-tools/stsw-link009.html">ST-LINK</a>, on your Windows machine (or RDP into UQ if you dont have Windows)</li>
-<li>Download and install the latest Windows <a href="https://www.segger.com/downloads/jlink/">JLink-Firmware</a>, on your Windows machine</li>
+<li>Download and install the latest Windows <a href="https://www.segger.com/downloads/jlink/">JLink-Firmware</a>, on your Windows machine.</li>
 <li>Download the ST-Link Reflash Utility from <a href="https://www.segger.com/downloads/jlink/#STLink_Reflash">Segger</a></li>
 </ul>
 <p>Run the reflasher -&gt; accept -&gt; [1] Upgrade To J-Link -&gt; [0] Quit</p>
-<h4 id="verifying_jlink">Verifying JLink</h4>
+<h2 id="verifying-jlink">Verifying JLink</h2>
 <p>Inside your VM, make sure the nucleo is attached as a device, verify by using <code>sudo dmesg</code> and looking at the bottom of the log for newly attached devices, as well as looking for /dev/ttyACM0 when the usb is pluged in and the device is attached to the VM. (Note the nucleo cannot be attached both to the VM and to the Host OS, so if its visible in your Host OS, it isnt attached to your VM)</p>
 <p>Execute the following</p>
 <pre><code>JLinkExe
@@ -145,12 +147,12 @@ S
 <p>There should be some text ending with Cortex-M4 Identified</p>
 <pre><code>q (for quit)
 </code></pre>
-<h4 id="flashing_code">Flashing Code</h4>
+<h2 id="flashing-code">Flashing Code</h2>
 <p>Now we are ready to flash, navigate back to the getting started, blinky makefile and execute</p>
 <pre><code>make flash
 </code></pre>
 <p>Accept any popups, the flasher will now cycle through the Compare, Erase, Program, Verify steps, after which the LED's on the Nucleo should start blinking.</p>
-<h4 id="tips_and_troubleshooting">Tips and Troubleshooting</h4>
+<h2 id="tips-and-troubleshooting">Tips and Troubleshooting</h2>
 <ul>
 <li><code>make clean</code> cleans the compiled binaries, this is not always necessary when recompiling code, since not everything needs to be recompiled, however it is useful when a lot of changes have been made.</li>
 <li><code>make -j</code> makes compiling faster by using all allocated cpu cores, note that when using a VM to make full use of this you would need to allocate more CPU cores in the VM settings</li>

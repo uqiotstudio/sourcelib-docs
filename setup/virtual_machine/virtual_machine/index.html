@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/virtual_machine/virtual_machine/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
   <title>Virtual Machine - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -20,7 +20,7 @@
     // Current page data
     var mkdocs_page_name = "Virtual Machine";
     var mkdocs_page_input_path = "setup\\virtual_machine\\virtual_machine.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/virtual_machine/virtual_machine/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -96,6 +96,8 @@
     <li>Virtual Machine</li>
     <li class="wy-breadcrumbs-aside">
       
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/virtual_machine/virtual_machine.md"> Edit on sourcelib-docs</a>
+      
     </li>
   </ul>
   
@@ -105,19 +107,19 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="virtual_machine_setup_guide">Virtual Machine Setup Guide</h3>
+                <h1 id="virtual-machine-setup-guide">Virtual Machine Setup Guide</h1>
 <ul>
 <li>CSSE3010 Linux Virtual Machine (VM) Requirements</li>
 <li>Install CSSE3010 VM on VMware Player Pro (Windows)</li>
 <li>Install CSSE3010 VM on VirtualBox (OSX or Windows)  </li>
 </ul>
-<h3 id="linux_virtual_machine_requirements">Linux Virtual Machine Requirements</h3>
+<h1 id="linux-virtual-machine-requirements">Linux Virtual Machine Requirements</h1>
 <p>You will require at least 8GB of hard-disk space, to install the VM. The Following Virtual Machines are recommended or the following operating systems:</p>
 <ul>
 <li>Windows: VMWare Player (preferred) or Virtual Box (alternate)</li>
 <li>OSX: Virtual Box or VMWare Fusion</li>
 </ul>
-<h3 id="vmware_player_pro_installation_windows">VMware Player Pro Installation: (Windows)</h3>
+<h1 id="vmware-player-pro-installation-windows">VMware Player Pro Installation: (Windows)</h1>
 <ul>
 <li>
 <p>You will be provided with a folder or links containing the VMWare workshop player installer and VM disk image file (.VDMK). Copy both to your hard drive. </p>
@@ -129,7 +131,7 @@
 <p>Install VMWare workshop player on your laptop.</p>
 </li>
 </ul>
-<h4 id="step_1">Step 1</h4>
+<h2 id="step-1">Step 1</h2>
 <p>You will now need to install the CSSE3010VM.VDMK file as a hard drive.</p>
 <p>Click, create a new virtual machine</p>
 <table>
@@ -144,12 +146,12 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_2">Step 2</h4>
+<h2 id="step-2">Step 2</h2>
 <p>In new virtual machine wizard, select "I will install the operating system later.". </p>
 <p>\includegraphics[width=0.7\textwidth]{images/Picture2.png}
 | <img alt="s2" src="../images/Picture2.png" /> |
 |:--:|</p>
-<h4 id="step_3">Step 3</h4>
+<h2 id="step-3">Step 3</h2>
 <p>In "guest operating system", select Linux and set the "Version" to be Ubuntu click next.</p>
 <table>
 <thead>
@@ -163,7 +165,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_4">Step 4</h4>
+<h2 id="step-4">Step 4</h2>
 <p>Set the "Virtual machine name:" to be CSSE3010VM. </p>
 <table>
 <thead>
@@ -177,11 +179,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_5">Step 5</h4>
+<h2 id="step-5">Step 5</h2>
 <p>Set the "Maximum disk size" to be 20GB. Select the "Store virtual disk as a single file". </p>
 <p>| <img alt="s5" src="../images/Picture5.png" /> |
 |:--:|]</p>
-<h4 id="step_6">Step 6</h4>
+<h2 id="step-6">Step 6</h2>
 <p>Check your settings are correct and click finish.</p>
 <table>
 <thead>
@@ -195,7 +197,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_7">Step 7</h4>
+<h2 id="step-7">Step 7</h2>
 <p>Select "CSSE3010VM", under "Home", in the main portal and click "edit virtual machine settings". </p>
 <table>
 <thead>
@@ -209,7 +211,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_8">Step 8</h4>
+<h2 id="step-8">Step 8</h2>
 <p>Select the “Hard Disk (SCSI) 20GB”</p>
 <ul>
 <li>Click “Remove” (The 20GB Hard Drive MUST BE REMOVED before proceeding)</li>
@@ -227,7 +229,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_9">Step 9</h4>
+<h2 id="step-9">Step 9</h2>
 <p>Select "Hard disk", in "Hardware types". </p>
 <table>
 <thead>
@@ -241,7 +243,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_10">Step 10</h4>
+<h2 id="step-10">Step 10</h2>
 <p>Select “SCSI”. </p>
 <table>
 <thead>
@@ -255,7 +257,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_11">Step 11</h4>
+<h2 id="step-11">Step 11</h2>
 <p>Select "use an existing virtual disk" in "Select a disk". Click Next.</p>
 <table>
 <thead>
@@ -269,7 +271,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_12">Step 12</h4>
+<h2 id="step-12">Step 12</h2>
 <p>Click Browse and select your CSSE3010vm.vdmk file. Click Finish.</p>
 <table>
 <thead>
@@ -283,7 +285,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_13">Step 13</h4>
+<h2 id="step-13">Step 13</h2>
 <p>Now click "play virtual machine".</p>
 <table>
 <thead>
@@ -297,7 +299,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="step_14">Step 14</h4>
+<h2 id="step-14">Step 14</h2>
 <p>Your Virtual Machine should now boot.</p>
 <table>
 <thead>
@@ -311,7 +313,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualbox_installation_osx_or_windows">VirtualBox Installation: (OSX or Windows)</h3>
+<h1 id="virtualbox-installation-osx-or-windows">VirtualBox Installation: (OSX or Windows)</h1>
 <ul>
 <li>You will be provided with a folder containing the VirtualBox installer and VM .VDMK file image. Copy both to your hard drive.</li>
 <li>Install VirtualBox on your laptop.
@@ -330,7 +332,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h4 id="step_15">Step 1</h4>
+<h2 id="step-1_1">Step 1</h2>
 <p>Click Next, input the name as ‘CSSE3010’ and select your OS as Linux, version Ubuntu and then click Next. SELECT OPERATING SYSTEM: LINUX and VERSION: UBUNTU-64bit</p>
 <table>
 <thead>
@@ -344,7 +346,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h4 id="step_16">Step 2</h4>
+<h2 id="step-2_1">Step 2</h2>
 <p>Now you have to set the amount of RAM to be allocated to the VM, 512MB is a good base. Hit Next.</p>
 <table>
 <thead>
@@ -358,7 +360,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h4 id="step_17">Step 3</h4>
+<h2 id="step-3_1">Step 3</h2>
 <p>We will select the start-up hard disk for the system to be the provided .vmdk file.  This file will set up your VM to have all of the libraries, programs and other necessary files already set up.  Click ‘Use existing hard disk’ then click the browse button as highlighted.  Then navigate to and Open the ubuntu_vm.vmdk  provided.</p>
 <table>
 <thead>
@@ -372,7 +374,7 @@ Next we are going to set up a new machine to run our Linux VM in by clicking ‘
 </tr>
 </tbody>
 </table>
-<h4 id="step_18">Step 4</h4>
+<h2 id="step-4_1">Step 4</h2>
 <p>Your new machine should now appear in the VirtualBox main window, double click the icon to boot it up.  Click OK through the dialogs that open and if prompted, log in as ‘csse3010 with password ‘csse3010.  You should now see a desktop screen similar to this:</p>
 <table>
 <thead>

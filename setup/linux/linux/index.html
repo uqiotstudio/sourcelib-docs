@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
   <title>Native Linux Setup Installation - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -20,7 +20,7 @@
     // Current page data
     var mkdocs_page_name = "Native Linux Setup Installation";
     var mkdocs_page_input_path = "setup\\linux\\linux.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -62,9 +62,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ubuntu-automatic-script-installation">Ubuntu Automatic Script installation</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#installing_the_gnu_arm_embedded_toolchain">Installing the GNU Arm Embedded Toolchain</a>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-the-gnu-arm-embedded-toolchain">Installing the GNU Arm Embedded Toolchain</a>
     </li>
     </ul>
                     </li>
@@ -102,6 +102,8 @@
     <li>Native Linux Setup Installation</li>
     <li class="wy-breadcrumbs-aside">
       
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/linux/linux.md"> Edit on sourcelib-docs</a>
+      
     </li>
   </ul>
   
@@ -111,11 +113,11 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="native_linux_setup_guide">Native Linux Setup Guide</h3>
-<h4 id="overview">Overview</h4>
+                <h1 id="native-linux-setup-guide">Native Linux Setup Guide</h1>
+<h2 id="overview">Overview</h2>
 <p>Linux Installation - Install CSSE3010 source and tools directly on Ubuntu (Not using a VM). You can install the CSSE3010 source and toolchain onto Ubuntu, directly. NOTE: You must first have your git account setup BEFORE attempting this.</p>
 <p><strong>NOTE: ONLY USE THIS GUIDE IF YOU ARE NOT USING A VIRTUAL MACHINE</strong></p>
-<h4 id="ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</h4>
+<h2 id="ubuntu-automatic-script-installation">Ubuntu Automatic Script installation</h2>
 <p>The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .bashrc startup script and add your user name to the “dialout” group.</p>
 <ol>
 <li>Clone the sourcelib repository into your csse3010 directory using <code>git clone https://github.com/uqembeddedsys/sourcelib.git</code></li>
@@ -125,7 +127,7 @@
 <li>Run <code>source ~/.profile</code> </li>
 <li>Type <code>echo $SOURCELIB_ROOT</code> into your terminal. This command should return a path variable, i.e ~/csse3010/sourcelib</li>
 </ol>
-<h4 id="installing_the_gnu_arm_embedded_toolchain">Installing the GNU Arm Embedded Toolchain</h4>
+<h2 id="installing-the-gnu-arm-embedded-toolchain">Installing the GNU Arm Embedded Toolchain</h2>
 <p>The GNU Arm Embedded Toolchain contains a compatible compiler for our MCU, while the utilities provided by STLink allows us to flash the Nucleo via the on-board STLinkV2 programmer.</p>
 <ol>
 <li>Download the latest version of GNU Arm Embedded Toolchain for your OS via <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads</a></li>
