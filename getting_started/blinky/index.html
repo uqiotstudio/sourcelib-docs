@@ -58,7 +58,7 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../setup/virtual_machine/virtual_machine/">Virtual Machine</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../setup/linux/linux/">Native Linux Setup Installation</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../setup/linux/linux/">Linux Setup Installation</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Getting Started</span></p>
@@ -68,10 +68,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#getting_started">Getting Started</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#updating_flashing_tools">Updating flashing tools</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#verifying_jlink">Verifying JLink</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#flashing_code">Flashing Code</a>
     </li>
@@ -127,26 +123,6 @@
 <p>Inside the platform folder, there should be a file called <code>main.c</code> and a file called <code>Makefile</code>. Execute the command:
 <code>make</code></p>
 <p>All the c files should now start building, when it finishes, there will be a main.bin file, main.elf file, main.hex file, and main.o file, as well as an obj directory.</p>
-<h4 id="updating_flashing_tools">Updating flashing tools</h4>
-<p>The flashing tools used in this course rely on JLink libraries, JLink is used to communicate with the debugging chip on the board which will then flash the code (amongst doing other things).However the board dy default comes with a different debugging chip, ST-LINK, thus we will need to replace the ST-LINK firmware with JLink firmware. If you are an internal student, this may have already been done for you, and you can try skipping to the next section, external students should read on.</p>
-<ul>
-<li>Download and install the ST-LINK USB Drivers for Windows <a href="https://www.st.com/en/development-tools/stsw-link009.html">ST-LINK</a>, on your Windows machine (or RDP into UQ if you dont have Windows)</li>
-<li>Download and install the latest Windows <a href="https://www.segger.com/downloads/jlink/">JLink-Firmware</a>, on your Windows machine.</li>
-<li>Download the ST-Link Reflash Utility from <a href="https://www.segger.com/downloads/jlink/#STLink_Reflash">Segger</a></li>
-</ul>
-<p>Run the reflasher -&gt; accept -&gt; [1] Upgrade To J-Link -&gt; [0] Quit</p>
-<h4 id="verifying_jlink">Verifying JLink</h4>
-<p>Inside your VM, make sure the nucleo is attached as a device, verify by using <code>sudo dmesg</code> and looking at the bottom of the log for newly attached devices, as well as looking for /dev/ttyACM0 when the usb is pluged in and the device is attached to the VM. (Note the nucleo cannot be attached both to the VM and to the Host OS, so if its visible in your Host OS, it isnt attached to your VM)</p>
-<p>Execute the following</p>
-<pre><code>JLinkExe
-connect
-STM32F429ZI (or other depending on your nucleo)
-S
-&lt;Enter&gt; (Default)
-</code></pre>
-<p>There should be some text ending with Cortex-M4 Identified</p>
-<pre><code>q (for quit)
-</code></pre>
 <h4 id="flashing_code">Flashing Code</h4>
 <p>Now we are ready to flash, navigate back to the getting started, blinky makefile and execute</p>
 <pre><code>make flash
@@ -166,7 +142,7 @@ S
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../../setup/linux/linux/" class="btn btn-neutral" title="Native Linux Setup Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../setup/linux/linux/" class="btn btn-neutral" title="Linux Setup Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

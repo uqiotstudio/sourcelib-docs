@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Native Linux Setup Installation - sourcelib-docs</title>
+  <title>Linux Setup Installation - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Native Linux Setup Installation";
+    var mkdocs_page_name = "Linux Setup Installation";
     var mkdocs_page_input_path = "setup\\linux\\linux.md";
     var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/";
   </script>
@@ -58,13 +58,15 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../../virtual_machine/virtual_machine/">Virtual Machine</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Native Linux Setup Installation</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux Setup Installation</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#installing_the_gnu_arm_embedded_toolchain">Installing the GNU Arm Embedded Toolchain</a>
+    <li class="toctree-l2"><a class="reference internal" href="#updating_flashing_tools">Updating flashing tools</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verifying_jlink">Verifying JLink</a>
     </li>
     </ul>
                     </li>
@@ -99,7 +101,7 @@
         
       
     
-    <li>Native Linux Setup Installation</li>
+    <li>Linux Setup Installation</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/linux/linux.md"> Edit on sourcelib-docs</a>
@@ -113,35 +115,54 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="native_linux_setup_guide">Native Linux Setup Guide</h3>
+                <h3 id="linux_setup_guide">Linux Setup Guide</h3>
 <h4 id="overview">Overview</h4>
 <p>Linux Installation - Install CSSE3010 source and tools directly on Ubuntu (Not using a VM). You can install the CSSE3010 source and toolchain onto Ubuntu, directly. NOTE: You must first have your git account setup BEFORE attempting this.</p>
-<p><strong>NOTE: ONLY USE THIS GUIDE IF YOU ARE NOT USING A VIRTUAL MACHINE</strong></p>
 <h4 id="ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</h4>
-<p>The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .bashrc startup script and add your user name to the “dialout” group.</p>
+<p>The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .profile startup script and add your user name to the “dialout” group.</p>
 <ol>
-<li>Clone the sourcelib repository into your csse3010 directory using <code>git clone https://github.com/uqembeddedsys/sourcelib.git</code></li>
+<li>If you have not yet done so, clone the sourcelib repository into your csse3010 directory using <code>git clone https://github.com/uqembeddedsys/sourcelib.git</code></li>
 <li>Go to the sourcelib/tools folder</li>
 <li>Run the script sourcelib_install.sh as root – i.e. <code>sudo ./sourcelib_install.sh</code></li>
 <li>The script will download and install part of the toolchain</li>
 <li>Run <code>source ~/.profile</code> </li>
 <li>Type <code>echo $SOURCELIB_ROOT</code> into your terminal. This command should return a path variable, i.e ~/csse3010/sourcelib</li>
+<li>Test the compiler with <code>arm-none-eabi-gcc --version</code></li>
 </ol>
-<h4 id="installing_the_gnu_arm_embedded_toolchain">Installing the GNU Arm Embedded Toolchain</h4>
-<p>The GNU Arm Embedded Toolchain contains a compatible compiler for our MCU, while the utilities provided by STLink allows us to flash the Nucleo via the on-board STLinkV2 programmer.</p>
-<ol>
-<li>Download the latest version of GNU Arm Embedded Toolchain for your OS via <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads</a></li>
-<li>Run the following commands in your terminal:<ol>
-<li>change into the home directory and make a new folder called tools <code>cd ~; mkdir tools</code></li>
-<li>change into the directory where the file was downloaded into, Downloads is used here as an example, it could be called something different on your machine <code>cd ~/Downloads</code></li>
-<li>extract the tar file into the tools folder that we created earlier <code>tar -xjf &lt;NAME_OF_DOWNLOADED_FILE&gt; -C ~/tools</code><ul>
-<li>NOTE: Normally you'd need to add the executable folder to PATH but that had already been taken care of by the install script in step 3 of the previous section.  </li>
-<li>test it with <code>arm-none-eabi-gcc --version</code></li>
+<h4 id="updating_flashing_tools">Updating flashing tools</h4>
+<p>The flashing tools used in this course rely on JLink libraries, JLink is used to communicate with the debugging chip on the board which will then flash the code (amongst doing other things).However the board dy default comes with a different debugging chip, ST-LINK, thus we will need to replace the ST-LINK firmware with JLink firmware. If you are an internal student, this may have already been done for you, and you can try skipping to the next section, external students should read on.</p>
+<p>Do the following steps on a Windows machine (Non-VM), if you don't have windows, you can RDP into UQ Computers.</p>
+<ul>
+<li>Download and install the ST-LINK USB Drivers for Windows <a href="https://www.st.com/en/development-tools/stsw-link009.html">ST-LINK</a></li>
+<li>Download and install the latest Windows <a href="https://www.segger.com/downloads/jlink/">JLink-Firmware</a></li>
+<li>Download the ST-Link Reflash Utility from <a href="https://www.segger.com/downloads/jlink/#STLink_Reflash">Segger</a></li>
 </ul>
-</li>
-</ol>
-</li>
-</ol>
+<p>Run the reflasher -&gt; accept -&gt; [1] Upgrade To J-Link -&gt; [0] Quit</p>
+<h4 id="verifying_jlink">Verifying JLink</h4>
+<p>Inside your VM, make sure the nucleo is plugged in, and attached as a device, verify by using <code>sudo dmesg</code> and looking at the bottom of the log for newly attached devices, as well as looking for /dev/ttyACM0 when the usb is pluged in and the device is attached to the VM. (Note the nucleo cannot be attached both to the VM and to the Host OS, so if its visible in your Host OS, it isnt attached to your VM)</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="flashing usb port" src="../images/usb.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*Figure 1: USB Port you will use</td>
+</tr>
+</tbody>
+</table>
+<p>Execute the following</p>
+<pre><code>JLinkExe
+connect
+STM32F429ZI (or other depending on your nucleo)
+S
+&lt;Enter&gt; (Default)
+</code></pre>
+<p>There should be some text ending with Cortex-M4 Identified</p>
+<pre><code>q (for quit)
+</code></pre>
+<p>NOTE: The USB port pictured above should be the only USB port you will need in this course</p>
               
             </div>
           </div>
