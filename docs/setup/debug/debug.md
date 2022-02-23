@@ -24,7 +24,7 @@ go to your app
 ```
 make launch
 ```
-This will generate a launch.json file inside a folder called .vscode inside your root folder (either code or ei-freertos, depending on your setup), this is needed for the debugger to work.
+This will generate a launch.json file inside a folder called .vscode inside your CSSE3010 folder, this is needed for the debugger to work.
 
 You will need to run this every time you flash a new application onto your board.
 
