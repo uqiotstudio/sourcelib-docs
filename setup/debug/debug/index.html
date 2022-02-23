@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/workbook/state_diagram/state_diagram/">
+  <link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/debug/debug/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>State Diagrams - sourcelib-docs</title>
+  <title>Debugger - sourcelib-docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "State Diagrams";
-    var mkdocs_page_input_path = "workbook\\state_diagram\\state_diagram.md";
-    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/workbook/state_diagram/state_diagram/";
+    var mkdocs_page_name = "Debugger";
+    var mkdocs_page_input_path = "setup\\debug\\debug.md";
+    var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/debug/debug/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -56,9 +56,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Setup</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/virtual_machine/virtual_machine/">Virtual Machine</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../virtual_machine/virtual_machine/">Virtual Machine</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/linux/linux/">Linux Setup Installation</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/linux/">Linux Setup Installation</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Getting Started</span></p>
@@ -67,10 +67,20 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">VSCode and Debugging</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/vsworkspace/vsworkspace/">VSCode Settings</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../vsworkspace/vsworkspace/">VSCode Settings</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../setup/debug/debug/">Debugger</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Debugger</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting_up_gdb_tools">Setting up gdb tools</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting_up_vs-code">Setting up vs-code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating_launchjson">Creating launch.json</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section_4_running_the_debugger">Section 4: Running the Debugger</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -93,11 +103,15 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>VSCode and Debugging &raquo;</li>
+        
+      
     
-    <li>State Diagrams</li>
+    <li>Debugger</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/workbook/state_diagram/state_diagram.md"> Edit on sourcelib-docs</a>
+        <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/debug/debug.md"> Edit on sourcelib-docs</a>
       
     </li>
   </ul>
@@ -108,24 +122,41 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="state_diagrams">State Diagrams</h3>
-<p>State diagrams show the modes of operation of your program (or firmware). The firmware may enter different modes or stages of operation, e.g. reading the joystick or displaying the LED-Bar pattern. State diagrams are used to describe cyclic executives, such as the \texttt{main()} function or an RTOS task/thread.</p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="ex_state" src="../images/fsm.jpg" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Figure 1: State Diagram Example</em></td>
-</tr>
-</tbody>
-</table>
+                <h3 id="csse3010_debug_guide">CSSE3010 Debug Guide</h3>
+<p>This document details how to set up and use a debugging environment.</p>
+<hr />
+<h4 id="setting_up_gdb_tools">Setting up gdb tools</h4>
+<pre><code>sudo apt-get install gdb-multiarch
+sudo ln -s /usr/bin/gdb-multiarch /usr/local/bin/arm-none-eabi-gdb
+</code></pre>
+<h4 id="setting_up_vs-code">Setting up vs-code</h4>
+<p>Follow the setup instructions in the VSCode Settings section</p>
+<p>Go into the extensions section and search for Cortex-Debug, install it, then restart vs-code</p>
+<h4 id="creating_launchjson">Creating launch.json</h4>
+<p>go to your app</p>
+<pre><code>make launch
+</code></pre>
+<p>This will generate a launch.json file inside a folder called .vscode inside your root folder (either code or ei-freertos, depending on your setup), this is needed for the debugger to work.</p>
+<p>You will need to run this every time you flash a new application onto your board.</p>
+<h4 id="section_4_running_the_debugger">Section 4: Running the Debugger</h4>
+<p>In vscode, press the Debug button on the left ribbon, at the top of the window, 2 configurations should become available, </p>
+<p>Debug Attach (Jlink)
+Debug Launch (JLink)</p>
+<p>Use Debug Attach to start a debug session on a currently running application and Debug Launch to restart the board and begin debugging.</p>
+<p>Then use standard debugging commands to go through your code, e.g. Continue, Step Over, Step Into, etc</p>
+<p>Click on the left of the line number to create breakpoints.</p>
+<p>Start by putting a break point somewhere in main.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../vsworkspace/vsworkspace/" class="btn btn-neutral" title="VSCode Settings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -148,6 +179,8 @@
   <div class="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../../vsworkspace/vsworkspace/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
