@@ -11,6 +11,9 @@ nav:
     - 'Linux Setup Installation': 'setup/linux/linux.md'
 - Getting Started:
     - 'Blinky': 'getting_started/blinky.md'
+- VSCode and Debugging:
+    - 'VSCode Settings': 'setup/vsworkspace/vsworkspace.md'
+    - 'Debugger': 'setup/debug/debug.md'
 
 theme: readthedocs
 markdown_extensions:
