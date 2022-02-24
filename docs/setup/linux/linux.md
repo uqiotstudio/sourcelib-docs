@@ -18,7 +18,7 @@ The automatic script will download and install the required packages, add the so
 
 The flashing tools used in this course rely on JLink libraries, JLink is used to communicate with the debugging chip on the board which will then flash the code (amongst doing other things).However the board dy default comes with a different debugging chip, ST-LINK, thus we will need to replace the ST-LINK firmware with JLink firmware. If you are an internal student, this may have already been done for you, and you can try skipping to the next section, external students should read on.
 
-Do the following steps on a Windows machine (Non-VM), if you don't have windows, you can RDP into UQ Computers.
+Do the following steps on a Windows machine (Non-VM).
 
 * Download and install the ST-LINK USB Drivers for Windows [ST-LINK](https://www.st.com/en/development-tools/stsw-link009.html)
 * Download and install the latest Windows [JLink-Firmware](https://www.segger.com/downloads/jlink/)
