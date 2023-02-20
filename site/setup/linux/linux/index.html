@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Linux Setup Installation - sourcelib-docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Linux Setup Installation";
+        var mkdocs_page_input_path = "setup/linux/linux.md";
+        var mkdocs_page_url = "/uqembeddedsys-projects/sourcelib-docs/setup/linux/linux/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> sourcelib-docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../git/git/">Git</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Setup</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../virtual_machine/virtual_machine/">Virtual Machine</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux Setup Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating_flashing_tools">Updating flashing tools</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verifying_jlink">Verifying JLink</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../getting_started/blinky/">Blinky</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VSCode and Debugging</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vsworkspace/vsworkspace/">VSCode Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../debug/debug/">Debugger</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">sourcelib-docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Setup &raquo;</li>
+      <li>Linux Setup Installation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/uqembeddedsys-projects/sourcelib-docs/edit/master/docs/setup/linux/linux.md">Edit on sourcelib-docs</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="linux_setup_guide">Linux Setup Guide</h3>
+<h4 id="overview">Overview</h4>
+<p>Linux Installation - Install CSSE3010 source and tools directly on Ubuntu (Not using a VM). You can install the CSSE3010 source and toolchain onto Ubuntu, directly. NOTE: You must first have your git account setup BEFORE attempting this.</p>
+<h4 id="ubuntu_automatic_script_installation">Ubuntu Automatic Script installation</h4>
+<p>The automatic script will download and install the required packages, add the sourcelib_env.sh script to your .profile startup script and add your user name to the “dialout” group.</p>
+<ol>
+<li>If you have not yet done so, clone the sourcelib repository into your csse3010 directory using <code>git clone https://github.com/uqembeddedsys/sourcelib.git</code></li>
+<li>Go to the sourcelib/tools folder</li>
+<li>Run the script sourcelib_install.sh as root – i.e. <code>sudo ./sourcelib_install.sh</code></li>
+<li>The script will download and install part of the toolchain</li>
+<li>Run <code>source ~/.profile</code> </li>
+<li>Type <code>echo $SOURCELIB_ROOT</code> into your terminal. This command should return a path variable, i.e ~/csse3010/sourcelib</li>
+<li>Test the compiler with <code>arm-none-eabi-gcc --version</code></li>
+</ol>
+<h4 id="updating_flashing_tools">Updating flashing tools</h4>
+<p>The flashing tools used in this course rely on JLink libraries, JLink is used to communicate with the debugging chip on the board which will then flash the code (amongst doing other things).However the board dy default comes with a different debugging chip, ST-LINK, thus we will need to replace the ST-LINK firmware with JLink firmware. If you are an internal student, this may have already been done for you, and you can try skipping to the next section, external students should read on.</p>
+<p>Do the following steps on a Windows machine (Non-VM).</p>
+<ul>
+<li>Download and install the ST-LINK USB Drivers for Windows <a href="https://www.st.com/en/development-tools/stsw-link009.html">ST-LINK</a></li>
+<li>Download and install the latest Windows <a href="https://www.segger.com/downloads/jlink/">JLink-Firmware</a></li>
+<li>Download the ST-Link Reflash Utility from <a href="https://www.segger.com/downloads/jlink/#STLink_Reflash">Segger</a></li>
+</ul>
+<p>Run the reflasher -&gt; accept -&gt; [1] Upgrade To J-Link -&gt; [0] Quit</p>
+<h4 id="verifying_jlink">Verifying JLink</h4>
+<p>Inside your VM, make sure the nucleo is plugged in, and attached as a device, verify by using <code>sudo dmesg</code> and looking at the bottom of the log for newly attached devices, as well as looking for /dev/ttyACM0 when the usb is pluged in and the device is attached to the VM. (Note the nucleo cannot be attached both to the VM and to the Host OS, so if its visible in your Host OS, it isnt attached to your VM)</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="flashing usb port" src="../images/usb.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*Figure 1: USB Port you will use</td>
+</tr>
+</tbody>
+</table>
+<p>Execute the following</p>
+<pre><code>JLinkExe
+connect
+STM32F429ZI (or other depending on your nucleo)
+S
+&lt;Enter&gt; (Default)
+</code></pre>
+<p>There should be some text ending with Cortex-M4 Identified</p>
+<pre><code>q (for quit)
+</code></pre>
+<p>NOTE: The USB port pictured above should be the only USB port you will need in this course</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../virtual_machine/virtual_machine/" class="btn btn-neutral float-left" title="Virtual Machine"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../getting_started/blinky/" class="btn btn-neutral float-right" title="Blinky">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../virtual_machine/virtual_machine/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../getting_started/blinky/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
