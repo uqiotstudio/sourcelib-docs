@@ -11,11 +11,32 @@ You will require at least 16GB of hard-disk space, to install the VM. The Follow
 * Windows: VMWare Player (preferred) or Virtual Box (alternate)
 * OSX: Virtual Box or VMWare Fusion
 
+# Virtual Box Installation: (Windows, OSX and Linux)
 
-# VMware Player Pro Installation: (Windows)
+
+* Download the [Virtual Box](https://www.virtualbox.org/) installer and VM disk image file (.ova). Copy both to your hard drive. 
+
+## Step 1
+Install virtual box and open, when installeed
+
+## Step 2
+Select and drag the VM .ova file into the virtual box manager. This will create a new CSSE3010 VM.
+
+## Step 3
+Double click the CSSE3010 VM icon, to start the CSSE3010 VM. This should take you to the desktop, as seen below.
+
+## Step 4
+Your Virtual Machine should now boot to the deskotp.
+
+| ![s14](images/Picture14.png) |
+|:--:|
 
 
-* You will be provided with a folder or links containing the VMWare workshop player installer and VM disk image file (.ova). Copy both to your hard drive. 
+
+# VMware Workstation Player Installation: (Windows only)
+
+
+* Download the VMWare workshop player installer and VM disk image file (.ova).
 
 * You can choose to download the latest VMware workshop player/ 
 
@@ -23,97 +44,24 @@ You will require at least 16GB of hard-disk space, to install the VM. The Follow
 
 
 ## Step 1
-You will now need to install the CSSE3010VM.ova file as a hard drive.
+Use the "Open a Vritual Machine" link and select the CSSE3010VMxx.ova file.
 
-Click, create a new virtual machine
-
-| ![s1](images/Picture1.png) |
+| ![VMWare Manager](images/vmware.png) |
 |:--:|
-| *Click, create a new virtual machine* |
+
+
 
 ## Step 2
-In new virtual machine wizard, select "I will install the operating system later.". 
-
-\includegraphics[width=0.7\textwidth]{images/Picture2.png}
-| ![s2](images/Picture2.png) |
-|:--:|
+Follow the prompts, to install the CSSE3010 VM. Set CSSE3010 to the VM name. Select ok or retry, when encoutering warnings.
 
 
 ## Step 3
-In "guest operating system", select Linux and set the "Version" to be Debian or  Ubuntu click next.
-
-
-| ![s3](images/Picture3.png) |
-|:--:|
+When finished installing, double click the CSSE3010 link on the VMware workstation player, to boot the CSSE3010 VM.
 
 ## Step 4
-Set the "Virtual machine name:" to be CSSE3010VM. 
-
-| ![s4](images/Picture4.png) |
-|:--:|
-
-## Step 5
-Set the "Maximum disk size" to be 20GB. Select the "Store virtual disk as a single file". 
-
-| ![s5](images/Picture5.png) |
-|:--:|]
-
-## Step 6
-Check your settings are correct and click finish.
-
-| ![s6](images/Picture6.png) |
-|:--:|
-
-## Step 7
-Select "CSSE3010VM", under "Home", in the main portal and click "edit virtual machine settings". 
-
-| ![s7](images/Picture7.png) |
-|:--:|
-
-## Step 8
-Select the “Hard Disk (SCSI) 20GB”
-
-* Click “Remove” (The 20GB Hard Drive MUST BE REMOVED before proceeding)
-* Click "Add" and continue to step 13)
-
-| ![s8](images/Picture8.png) |
-|:--:|
-
-
-## Step 9
-Select "Hard disk", in "Hardware types". 
-
-| ![s9](images/Picture9.png) |
-|:--:|
-
-## Step 10
-Select “SCSI”. 
-
-| ![s10](images/Picture10.png) |
-|:--:|
-
-## Step 11
-Select "use an existing virtual disk" in "Select a disk". Click Next.
-
-| ![s11](images/Picture11.png) |
-|:--:|
-
-## Step 12
-Click Browse and select your CSSE3010vm.ova file. Click Finish.
-
-| ![s12](images/Picture12.png) |
-|:--:|
-
-## Step 13
- Now click "play virtual machine".
- 
-| ![s13](images/Picture13.png) |
-|:--:|
-
-## Step 14
-Your Virtual Machine should now boot.
+Your Virtual Machine should now boot to the deskotp.
 
 | ![s14](images/Picture14.png) |
 |:--:|
- 
+
 
