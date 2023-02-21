@@ -57,11 +57,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#task_3_git_configuration">Task 3: Git Configuration</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task_4_cloning_repo">Task 4: Cloning Repo</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_5_cloning_repo">Task 5: Cloning Repo</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</a>
+    <li class="toctree-l2"><a class="reference internal" href="#task_5_staging_and_pushing_files">Task 5: Staging and Pushing Files</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#summary_of_important_commands">Summary of Important Commands</a>
     </li>
@@ -118,9 +116,8 @@
                 <h3 id="csse3010_git_guide">CSSE3010 Git Guide</h3>
 <p>Note this guide is for Linux, OSX and Windows. You will find Windows specific instructions, below.</p>
 <p>Use Git to manage your development. Benefit: Git is an distributed repository that you can use to keep track of your current code history and use for backup purposes. You can check in changes when you need to, not just when you are connected to the Internet. This means that your git history will be more like a “workbook” or diary of your progress.</p>
-<p>There are 2 repositories you will need for this course </p>
+<p>There are is 1 repository you will need for this course </p>
 <ul>
-<li>'sourcelib' - this contains all the necessary drivers needed to compile your code, as well as programming examples, Makefiles, compiling tools, flashing tools, and debugging tools. This repository is public, available to everyone, you will only be pulling from this repository. You can find the repository here <a href="https://github.com/uqembeddedsys/sourcelib">https://github.com/uqembeddedsys/sourcelib</a>, you will clone it further on in this guide.</li>
 <li>'repo' - This is where you will commit your code, any libraries you develop, stage code, and project code goes here.</li>
 </ul>
 <p>This document contains instructions on the following procedures:</p>
@@ -181,28 +178,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 <!-- **If you're using your own Linux machine (NOT THE CSSE3010 VIRTUAL MACHINE)}, you will also need to set up a local csse3010 directory under your home directory for later tasks. NOTE: The csse3010 folder must be set up under the home directory in order for important environment variables to work properly. Refer to the mylib guide for the full folder hierarchy.**  -->
 
 <hr />
-<h4 id="task_4_cloning_sourcelib">Task 4: Cloning Sourcelib</h4>
-<!-- ** If you're bring your own Linux environment instead of the CSSE3010 Virtual Machine, you will first need to clone the *sourcelib* repository into your csse3010 folder. Virtual Machine users will already have *sourcelib* cloned in the csse3010 folder. *sourcelib* contains example programs to help you get started on the Nucleo platform, as well as configuration and library files for the onboard MCU. **   -->
-
-<p>Execute the following commands:<br />
-- Change into home directory: <code>cd ~</code><br />
-- Create a folder called csse3010: <code>mkdir csse3010</code><br />
-- Change into your csse3010 directory: <code>cd ~/csse3010</code>  <br />
-- Clone the remote sourcelib repository into your csse3010 folder. This will automatically create a folder called sourcelib:<br />
-<code>git clone  https://github.com/uqembeddedsys/sourcelib.git</code>  </p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="Git URL for cloning sourcelib" src="../images/sourcelib.jpg" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Figure 2: Git URL for cloning sourcelib</em></td>
-</tr>
-</tbody>
-</table>
-<h4 id="task_5_cloning_repo">Task 5: Cloning Repo</h4>
+<h4 id="task_4_cloning_repo">Task 4: Cloning Repo</h4>
 <p>Navigate to 'repo' in gitea, select 'SSH', and copy the ssh url</p>
 <table>
 <thead>
@@ -225,7 +201,7 @@ git config --global user.email MY.EMAIL@student.uq.edu.au
 <p>NOTE: There WILL be updates to <code>sourcelib</code> throughout the semester, make sure you keep it up to date by <code>cd ~/csse3010/sourcelib</code> <code>git fetch</code> <code>git pull</code>, do this often.</p>
 <p>NOTE: there are two labels in your gitg window, a <code>master</code> branch and a <code>origin/master</code> branch. The <code>master</code> branch is on your local repository, and all branches prefixed with <code>origin/</code> are on the remote server (CSSE3010 gitea).</p>
 <p>NOTE: You will only commit files to the <code>repo</code> repository.</p>
-<h4 id="task_6_staging_and_pushing_files">Task 6: Staging and Pushing Files</h4>
+<h4 id="task_5_staging_and_pushing_files">Task 5: Staging and Pushing Files</h4>
 <p>Under normal development, you can use git to stage files, and commit them to your repository. </p>
 <p>Make a commit now by updating the <code>README.md</code> file in your <code>repo</code>, if there is no README.md file, you can create one with <code>touch README.md</code>.</p>
 <p>Open the file with a text editor. e.g. <code>code README.md</code>, change the title to <code>&lt;Student#&gt; 3010 Repo</code>, e.g. <code>42345678 3010 Repo</code>, save the file and close it. Open a terminal in the <code>repo</code> folder.</p>
