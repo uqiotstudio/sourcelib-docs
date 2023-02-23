@@ -50,10 +50,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#task_1_setting_up_your_git_account">Task 1: Setting up your git account</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#task_2_public_key_generation_via_command_line_linux">Task 2: Public Key Generation via Command Line (Linux)</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#public_key_generation_for_windows">Public Key Generation for Windows</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#task_3_git_configuration">Task 3: Git Configuration</a>
     </li>
@@ -164,9 +160,10 @@ Browse CSSE3010 gitea using the URL: <a href="https://csse3010-gitea.uqcloud.net
 <p>The url for the SSH settings should be <a href="https://csse3010-gitea.uqcloud.net/user/settings/keys">https://csse3010-gitea.uqcloud.net/user/settings/keys</a>
 Copy the contents of <code>cat ~/.ssh/id_rsa.pub</code> into the "Content" section.</p>
 <p>NOTE: For VirtualBox users, make sure “clipboard, bidirectional” is enabled, this will help you copy+paste things between your Host OS and VM.</p>
-<h5 id="public_key_generation_for_windows">Public Key Generation for Windows</h5>
-<p>Install <a href="https://www.putty.org/">putty</a>
-Follow the steps on this <a href="https://phoenixnap.com/kb/generate-ssh-key-windows-10#ftoc-heading-6">guide</a></p>
+<!---### Public Key Generation for Windows (Non Virtual Machine - do not do, if using a Virtual Machine)
+Install [putty](https://www.putty.org/)
+Follow the steps on this [guide](https://phoenixnap.com/kb/generate-ssh-key-windows-10#ftoc-heading-6)
+--->
 <hr />
 <h4 id="task_3_git_configuration">Task 3: Git Configuration</h4>
 <p>You will need to initialize your git configuration and set up your global user name and user email. This is required to ensure that you can commit to your local repository. Open a terminal (in your VM, if used) and execute the following commands:</p>
